@@ -47,4 +47,10 @@ fun FormDataDiri(modifier: Modifier) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        OutlinedTextField(
+            value = textNama,
+            onValueChange = { textNama = it },
+            label = { Text("Nama") }
+        )
+
 
