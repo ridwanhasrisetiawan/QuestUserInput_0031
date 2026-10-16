@@ -49,20 +49,12 @@ fun FormDataDiri(modifier: Modifier) {
     ) {
         OutlinedTextField(
             value = textNama,
-            onValueChange = { textNama = it },
-            label = { Text("Nama") }
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(250.dp),
+            label = { Text(text = "Nama Lengkap") },
+            onValueChange = {
+                textNama = it
+            }
         )
 
-        OutlinedTextField(
-            value = textAlamat,
-            onValueChange = { textAlamat = it },
-            label = { Text("Alamat") }
-        )
-
-        OutlinedTextField(
-            value = textJK,
-            onValueChange = { textJK = it },
-            label = { Text("Jenis Kelamin") }
-        )
-    }
-}
