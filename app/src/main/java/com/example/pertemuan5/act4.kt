@@ -42,11 +42,9 @@ fun FormDataDiri(modifier: Modifier) {
 
     val gender: List<String> = listOf("Laki-Laki", "Perempuan")
 
-    Column(
-        modifier = Modifier.padding(top = 50.dp),
+    Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+        horizontalAlignment = Alignment.CenterHorizontally) {
         OutlinedTextField(
             value = textNama,
             singleLine = true,
@@ -58,3 +56,21 @@ fun FormDataDiri(modifier: Modifier) {
             }
         )
 
+        Row() {
+            gender.forEach { item ->
+                Row(
+                    modifier = Modifier.selectable(
+                        selected = textJK == item,
+                        onClick = { textJK == item }
+                    ), verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = textJK == item,
+                        onClick = {
+                            textJK = item
+                        })
+                    Text(item)
+                }
+            }
+        }
+    }
+}
